@@ -75,10 +75,10 @@ const statistical = (data) => {
       total_same_3_months++;
     if (e.date_from.getYear() - e.date_to.getYear() === 0) total_same_year++;
     // other++;
-    const date = `${(
+    const date = `${+(
       (e.date_to - e.date_from) /
       (1000 * 60 * 60 * 24)
-    ).toFixed()}`;
+    ).toFixed()+1}`;
 
     about_query_number_of_times[date] = about_query_number_of_times[date] === undefined ? 1 : about_query_number_of_times[date] + 1;
   });
